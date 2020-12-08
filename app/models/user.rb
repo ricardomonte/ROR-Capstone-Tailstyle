@@ -6,4 +6,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
 
   has_secure_password
+
+  has_many :articles, foreign_key: :author_id, class_name: 'Article', dependent: :destroy
 end
