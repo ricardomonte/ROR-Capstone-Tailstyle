@@ -1,5 +1,15 @@
-<%= form_with(model: @user, url: users_path) do |f| %>
-  <%= label_tag(:name, "introduce name:") %>
-  <%= f.text_field :name %>
-  <%= f.submit "Create new user" %>
-<% end %>
+
+<div class="container">
+<div class="row justify-content-center">
+  <div class="">
+   <h1 style="color: #FF6300">Register</h1>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 bg-white pb-4 pt-4 rounded">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
