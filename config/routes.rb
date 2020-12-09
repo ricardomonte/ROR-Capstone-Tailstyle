@@ -6,8 +6,5 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   resources :articles
-  get 'nutrition', to: 'categories#nutrition'
-  get 'healthy_life', to: 'categories#healthy_life'
-  get 'grooming', to: 'categories#grooming'
-  get 'entertainment', to: 'categories#entertainment'
+  resources :categories
 end
