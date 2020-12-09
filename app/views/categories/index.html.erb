@@ -3,7 +3,10 @@
     <div class="card">
       <img class="card-img" src="/images/pathToYourImage.png" alt="Card image">
       <div class="card-img-overlay">
-        <h4 class="card-title"><%= category.name %></h4>
+        
+        <h4 class="card-title">
+          <%= link_to category.name, category_path(category.id), class: 'card-link text-white' %>
+        </h4>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
     </div>
