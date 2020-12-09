@@ -1,0 +1,13 @@
+<p>
+  <%= @article.title %>
+</p>
+<p>
+  <%= @article.text %>
+</p>
+<p>
+  <%= image_tag @article.image_url %>
+</p>
+
+<% @article.categories.each do |category|%>
+  <p><%= category.name %></p>
+<% end %>

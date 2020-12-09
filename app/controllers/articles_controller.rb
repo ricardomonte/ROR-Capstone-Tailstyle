@@ -15,9 +15,13 @@ class ArticlesController < ApplicationController
     if @article.save
       @article.category_ids = category
       flash[:notice] = 'Article has been created.'
-      redirect_to root_path
+      redirect_to article_path(@article.id)
     else
       render :new
     end
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 end
