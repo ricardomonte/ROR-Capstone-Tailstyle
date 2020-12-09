@@ -1,13 +1,19 @@
-<p>
-  <%= @article.title %>
-</p>
-<p>
-  <%= @article.text %>
-</p>
-<p>
-  <%= image_tag @article.image_url %>
-</p>
 
-<% @article.categories.each do |category|%>
-  <p><%= category.name %></p>
-<% end %>
+<div class="container h-100">
+  <div class="row justify-content-center align-items-center" style="min-height: 45rem;">
+    <div class="card">
+      <%= image_tag @article.image_url, class: "card-img-top" %>
+      <div class="card-body">
+        <h4 class="card-title"><%= @article.title %></h4>
+        <% @article.categories.each do |category|%>
+          <h6 class="card-subtitle mb-2 text-muted"><%= category.name %></h6>
+        <% end %>
+        <p class="card-text">
+          <%= @article.text %>
+        </p>
+        <a href="#!" class="card-link">Card link</a>
+      </div>
+    </div>
+  
+  </div>
+</div>
