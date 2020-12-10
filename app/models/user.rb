@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :articles, foreign_key: :author_id, class_name: 'Article', dependent: :destroy
+
+  has_many :votes
+  has_many :voted_articles, through: :votes, foreign_key: 'article_id', source: :article
 end
