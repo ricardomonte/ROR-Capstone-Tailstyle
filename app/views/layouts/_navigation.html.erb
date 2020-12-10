@@ -5,20 +5,14 @@
       <div class="justify-content-center navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <%= link_to 'Home', root_path, class: 'nav-link' %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Alimentation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Helthy Life</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Grooming</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Toys</a>
-          </li>
+          <% if signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Create an Article', new_article_path, class: 'nav-link' %>
+            </li>
+          <% end %>
+          <% nav_list %>
         </ul>
       </div>
       <div class="justify-content-end">
