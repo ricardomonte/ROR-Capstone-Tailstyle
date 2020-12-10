@@ -1,13 +1,16 @@
 <div class="container h-100">
   <div class="row justify-content-center align-items-center" style="min-height: 45rem;">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">something</h4>
-        <h6 class="card-subtitle mb-2 text-muted">something</h6>
-        <p class="card-text">
-          something else
-        </p>
-        <a href="#!" class="card-link">Card link</a>
+    <div class="card-group">
+      <div class="card">
+        <div class="card-body">
+          <% @article_category.each do | article | %>
+            <%= image_tag article.image_url, class: "card-img-top" %>
+            <h4 class="card-title"><%= article.title %></h4>
+            <h6 class="card-subtitle mb-2 text-muted">something</h6>
+            <p class="card-text"><%= article.text %></p>
+            <%= link_to 'Read more', article_path(article.id) %>
+          <% end %>
+        </div>
       </div>
     </div>
   
