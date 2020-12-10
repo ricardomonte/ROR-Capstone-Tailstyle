@@ -1,6 +1,11 @@
 class Article < ApplicationRecord
 
   include ImageUploader::Attachment(:image)
+
+  validates :title, presence: true
+  validates :text, presence: true
+  validates :image, presence: true
+
   
   belongs_to :user, foreign_key: :author_id, class_name: 'User'
 
