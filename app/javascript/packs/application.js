@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import "bootstrap"
+import "@fortawesome/fontawesome-free/js/all";
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
