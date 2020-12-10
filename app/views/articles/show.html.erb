@@ -11,7 +11,7 @@
         <p class="card-text">
           <%= @article.text %>
         </p>
-        <a href="#!" class="card-link">Card link</a>
+        <%= button_to 'vote', votes_path(votes: { article_id: @article.id }), method: :post %>
       </div>
     </div>
   
