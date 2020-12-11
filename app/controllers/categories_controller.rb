@@ -2,7 +2,12 @@ class CategoriesController < ApplicationController
   
   def index
     @categories = Category.all.order_by_priority
-    @article = Article.find(favorite_article)
+    if favorite_article.nil?
+      @article = Article.first
+    else
+      @article = Article.find(favorite_article)
+    end
+    
   end
 
   def show
