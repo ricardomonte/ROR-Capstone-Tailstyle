@@ -1,21 +1,7 @@
 <div class="container h-100">
   <div class="row justify-content-center align-items-center" style="min-height: 45rem;">
     <div class="card-group">
-      <% @article_category.each do | article | %>
-        <div class="card">
-          <div class="card-body pt-0 pr-0 pl-0" style='width: 338px;'>
-            <div class="card-img-top pb-2"  style='width: 338px; height: 225px; over-flow: hide;'>
-              <%= image_tag article.image_url, class: 'h-100 w-100', style: 'object-fit: cover; ' %>
-            </div>
-            <div class='pl-2'>
-              <h6 class="card-title font-weight-bolder" style="color: #FA6000;"><%= @category.name %></h4>
-              <h5 class="card-subtitle mb-2 font-weight-bolder"><%= article.title %></h6>
-              <p class="card-text" style='text-overflow: ellipsis;'><%= article.text %></p>
-              <%= link_to 'Read more', article_path(article.id) %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <% display_category_show(@article_category, @category) %>
     </div>
   </div>
 </div>
