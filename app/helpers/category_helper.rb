@@ -13,12 +13,14 @@ module CategoryHelper
 
   def display_category_show(element, category)
     element.each do | article |  
-      concat content_tag(:div, content_tag(:div, image_article_show(article, category), class: "card-body pt-0 pr-0 pl-0", style: 'width: 338px;'), class: 'card')                  
+      concat content_tag(:div, content_tag(:div, image_article_show(article, category),
+                        class: "card-body pt-0 pr-0 pl-0", style: 'width: 338px;'), class: 'card')                  
     end
   end
 
   def image_article_show(element, category)
-    content_tag(:div, (image_tag element.image_url, class: 'h-100 w-100', style: 'object-fit: cover;'), class: "card-img-top pb-2",  style: 'width: 338px; height: 225px; over-flow: hide;') +
+    content_tag(:div, (image_tag element.image_url, class: 'h-100 w-100', style: 'object-fit: cover;'),
+              class: "card-img-top pb-2",  style: 'width: 338px; height: 225px; over-flow: hide;') +
     content_tag(:div, content_article_show(element, category) , class: "pl-2")
     
   end
