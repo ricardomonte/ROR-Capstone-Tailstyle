@@ -30,6 +30,7 @@ arr_cat = [cat_n.id, cat_h.id, cat_g.id, cat_e.id]
 
 img_dogs = ["img1", "img2", "img3", "img4", "img5", "img6", "img7"]
 
+arti = []
 7.times {
   uploader = ImageUploader.new(:store)
   file = File.new(Rails.root.join('app/assets/images/seed/' + img_dogs.sample + '.jpg'))
@@ -40,10 +41,15 @@ img_dogs = ["img1", "img2", "img3", "img4", "img5", "img6", "img7"]
                         author_id: users.sample, 
                         image_data: uploaded_file.to_json )
 
+  arti << art.id
   3.times {
     art.category_ids = arr_cat.sample
   }
 }
+
+Vote.create(user_id: users.sample, article_id: arti.sample)
+
+
 p Article.count
 
 
