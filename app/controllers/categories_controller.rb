@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
     else
       @article = Article.find(favorite_article)
     end
-    
   end
 
   def show
@@ -16,6 +15,8 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+
 
   def favorite_article
     Vote.favorite.keys.first

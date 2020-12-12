@@ -103,27 +103,27 @@ arr_cat = [cat_n.id, cat_h.id, cat_g.id, cat_e.id]
 
 img_dogs = ["img1","img2", "img3", "img4", "img5", "img6", "img7"]
 
-arti = []
-9.times {
+# arti = []
+# 9.times {
 
-  # file = File.new(Rails.root.join('app/assets/images/seed/' + img_dogs.sample + '.jpg'))
-
-
-  art = Article.create( title: Faker::Lorem.sentence, 
-                        text: Faker::Lorem.paragraph, 
-                        author_id: users.sample, 
-                        remote_image_url:"http://upload.wikimedia.org/wikipedia/commons/2/28/Joan_Baez_Bob_Dylan_crop.jpg")
-
-  arti << art.id
-  4.times {
-    art.category_ids = arr_cat.sample
-  }
-}
-
-vote = Vote.create(user_id: users.sample, article_id: arti.sample)
+#   # file = File.new(Rails.root.join('app/assets/images/seed/' + img_dogs.sample + '.jpg'))
 
 
-p Article.count
+#   art = Article.create( title: Faker::Lorem.sentence, 
+#                         text: Faker::Lorem.paragraph, 
+#                         author_id: users.sample, 
+#                         remote_image_url:"http://upload.wikimedia.org/wikipedia/commons/2/28/Joan_Baez_Bob_Dylan_crop.jpg")
+
+#   arti << art.id
+#   4.times {
+#     art.category_ids = arr_cat.sample
+#   }
+# }
+
+# vote = Vote.create(user_id: users.sample, article_id: arti.sample)
+
+
+p Category.count
 
 
 
