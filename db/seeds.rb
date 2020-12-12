@@ -105,14 +105,14 @@ img_dogs = ["img1","img2", "img3", "img4", "img5", "img6", "img7"]
 
 arti = []
 9.times {
-  uploader = ImageUploader.new(:store)
-  file = File.new(Rails.root.join('app/assets/images/seed/' + img_dogs.sample + '.jpg'))
-  uploaded_file = uploader.upload(file)
+
+  # file = File.new(Rails.root.join('app/assets/images/seed/' + img_dogs.sample + '.jpg'))
+
 
   art = Article.create( title: Faker::Lorem.sentence, 
                         text: Faker::Lorem.paragraph, 
                         author_id: users.sample, 
-                        image_data: uploaded_file.to_json )
+                        remote_image_url:"http://upload.wikimedia.org/wikipedia/commons/2/28/Joan_Baez_Bob_Dylan_crop.jpg")
 
   arti << art.id
   4.times {

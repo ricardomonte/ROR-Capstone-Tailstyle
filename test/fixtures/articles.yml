@@ -4,14 +4,6 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
-  title: testing one
-  text: this is a testing texte one
-  author_id: 1
-  image: '<%= TestData.image_data %>'
+one: {}
 #
-two:
-  title: testing two
-  text: this is a testing text two
-  author_id: 2
-  image: '<%= TestData.image_data %>'
+two: {}

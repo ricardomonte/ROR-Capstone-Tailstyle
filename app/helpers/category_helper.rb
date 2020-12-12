@@ -1,7 +1,7 @@
 module CategoryHelper
   def display_category_index(element)
     element.each do | category |  
-      concat content_tag(:div, content_tag(:div, (image_tag category.articles.first_article.image_url, class: 'h-100 w-100', style: 'object-fit: cover;'), class:'card-image', style: 'width: 464px; height: 300px; over-flow: hide;') +
+      concat content_tag(:div, content_tag(:div, (image_tag category.articles.first_article.image.url, class: 'h-100 w-100', style: 'object-fit: cover;'), class:'card-image', style: 'width: 464px; height: 300px; over-flow: hide;') +
                         content_tag(:div, link_title(category) , class: "card-img-overlay"), class: "card", style: 'border: 0;')                   
     end
   end
@@ -19,7 +19,7 @@ module CategoryHelper
   end
 
   def image_article_show(element, category)
-    content_tag(:div, (image_tag element.image_url, class: 'h-100 w-100', style: 'object-fit: cover;'),
+    content_tag(:div, (image_tag element.image.url, class: 'h-100 w-100', style: 'object-fit: cover;'),
               class: "card-img-top pb-2",  style: 'width: 338px; height: 225px; over-flow: hide;') +
     content_tag(:div, content_article_show(element, category) , class: "pl-2")
     
@@ -31,9 +31,6 @@ module CategoryHelper
     content_tag(:p, element.text, class: "card-subtitle mb-2 font-weight-bolder") +
     (link_to 'Read more', article_path(element.id))
   end
-
-
-
 end
 
 

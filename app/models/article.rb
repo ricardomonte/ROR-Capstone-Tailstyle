@@ -1,6 +1,5 @@
 class Article < ApplicationRecord
-
-  include ImageUploader::Attachment(:image)
+  mount_uploader :image, ImageUploader
 
   validates :title, presence: true
   validates :text, presence: true

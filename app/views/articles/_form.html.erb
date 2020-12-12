@@ -2,7 +2,6 @@
   <%= f.error_notification %>
   <%= f.input :title %>
   <%= f.input :text, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 } %>
-  <% f.input :image, as: :hidden, input_html: { value: @article.cached_image_data } %>
   <%= f.input :image, as: :file %>
   <%= f.input :categories, as: :radio_buttons, collection: @categories %>
   <%= f.button :submit, class: "btn-primary" %>

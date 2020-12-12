@@ -10,14 +10,6 @@ require("channels")
 import "bootstrap"
 import "@fortawesome/fontawesome-free/js/all";
 
-import fileUpload from 'fileUpload'
-
-// listen on 'turbolinks:load' instead of 'DOMContentLoaded' if using Turbolinks
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.upload-file').forEach(fileInput => {
-    fileUpload(fileInput)
-  })
-})
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
