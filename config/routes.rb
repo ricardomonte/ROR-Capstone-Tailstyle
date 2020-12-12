@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :articles
   resources :categories
   resources :votes, only: [:create]
+
+  mount Shrine.presign_endpoint(:cache) => "/s3/params"
 end
