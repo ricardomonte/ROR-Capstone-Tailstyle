@@ -99,9 +99,7 @@ cat_h = Category.create(name: 'Healthy life', priority: 4)
 cat_g = Category.create(name: 'Grooming', priority: 2)
 cat_e = Category.create(name: 'Entertainment', priority: 1)
 
-arr_cat = [cat_n.id, cat_h.id, cat_g.id, cat_e.id]
 
-img_dogs = ["img1","img2", "img3", "img4", "img5", "img6", "img7"]
 
 # arti = []
 # 9.times {
