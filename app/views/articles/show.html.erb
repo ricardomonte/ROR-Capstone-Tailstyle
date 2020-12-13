@@ -13,6 +13,7 @@
         </p>
         <% if signed_in? %>
           <%= link_to '<i class="fas fa-dog fa-3x" style="color: #FF6300;"></i>'.html_safe, votes_path(votes: { article_id: @article.id }), method: :post %>
+          <p class='text-muted font-italic'><small>You can vote for this article clicking in the dog</small></p>
         <% end %>
       </div>
     </div>

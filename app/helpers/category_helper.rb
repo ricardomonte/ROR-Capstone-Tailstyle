@@ -4,7 +4,7 @@ module CategoryHelper
     element.each do | category |
       unless category.articles.blank?
         concat content_tag(:div, content_tag(:div, (image_tag category.articles.first_article.image.url, class: 'h-100 w-100', style: 'object-fit: cover;'), class:'card-image', style: 'width: 464px; height: 300px; over-flow: hide;') +
-              content_tag(:div, link_title(category), class: "card-img-overlay"), class: "card", style:'height: 300px border: 0;')
+              content_tag(:div, link_title(category), class: "card-img-overlay", style: 'width: 464px;'), class: "card", style:'height: 300px border: 0; background-color: #4E443E;')
       end
     end
   end
@@ -37,7 +37,7 @@ module CategoryHelper
     content_tag(:h6, category.name, class: "card-title font-weight-bolder", style: "color: #FA6000;") +
     content_tag(:h5, element.title, class: "card-subtitle mb-2 font-weight-bolder") +
     content_tag(:p, element.text, class: "card-subtitle mb-2 font-weight-bolder") +
-    (link_to 'Read more', article_path(element.id))
+    (link_to "Author: #{element.user.username}", article_path(element.id))
   end
 
   def image_article_show2(element, category)
