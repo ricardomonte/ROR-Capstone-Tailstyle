@@ -4,9 +4,9 @@
         <%= image_tag @article.image.url, style: "width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%;", alt: "Responsive image"%>
       </div>
       <div class="card-img-overlay">
-        <div class="h-75 d-flex flex-column justify-content-end align-items-start">
+        <div class="container-hero__info d-flex flex-column justify-content-end align-items-start">
           <h4 class="card-text" style="color: #FA6000"><%= @article.title %></h4>
-          <p class="card-text text-white font-weight-bolder text-center"><%= @article.text %></p>
+          <p class="card-text text-white font-weight-bolder text-center module-hero overflow-hero"><%= @article.text %></p>
         </div>
       </div>
 
