@@ -1,17 +1,9 @@
 require 'rails_helper'
 require 'faker'
+require 'support/factory_bot'
 
 RSpec.describe 'Session create and delete', type: :feature do
-  let(:user) { User.create(username: 'jb', name: 'Johnny Bravo', email: 'johnny@microverse.org', password: '123456789') }
-
-  uploader = ImageUploader.new(:store)
-  file = File.new(Rails.root.join('test/files/img7.jpg'))
-  uploaded_file = uploader.upload(file)
-
-  let!(:article) {Article.create( title: Faker::Lorem.sentence, 
-                          text: Faker::Lorem.paragraph, 
-                          author_id: user.id, 
-                          image_data: uploaded_file.to_json )}
+  let(:user) { create :user }
 
   before(:example) do
     visit login_path
