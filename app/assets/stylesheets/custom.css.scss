@@ -191,4 +191,13 @@ html {
   color: #6c757d;
 }
 
+.link-readmore {
+  text-decoration: none;
+  color: #FA6000;
+  &:hover {
+    text-decoration: none;
+    color: #4E443E;
+  }
+}
+
 
