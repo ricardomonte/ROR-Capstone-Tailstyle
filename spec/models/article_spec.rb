@@ -1,25 +1,20 @@
 require 'rails_helper'
 require 'faker'
+require 'support/factory_bot'
 
 RSpec.describe Article, type: :model do
   describe 'Create an article' do
-    let(:testuser) { User.create(username: 'carloncho', name: 'Carlos', email: 'carlos@microverse.org', password: '123456789') }
-    
-    uploader = ImageUploader.new(:store)
-    file = File.new(Rails.root.join('test/files/img7.jpg'))
-    uploaded_file = uploader.upload(file)
+    let(:testuser) { create :user }
+    !let(:testarticle) { build :article }
 
-    subject {Article.create( title: Faker::Lorem.sentence, 
-                            text: Faker::Lorem.paragraph, 
-                            author_id: testuser.id, 
-                            image_data: uploaded_file.to_json )}
-
-    it 'change the count of votes by one' do
-      expect { subject }.to change { Article.count }.by(1)
+    it 'change the count of article by one' do
+      testarticle.author_id = testuser.id
+      expect { testarticle.save }.to change { Article.count }.by(1)
     end
 
-    it 'return the author id' do
-      expect(subject.author_id).to eq(testuser.id)
+    it 'will not return the author id' do
+      testarticle.save
+      expect(testarticle.author_id).to_not eq(testuser.id)
     end
   end
 

@@ -1,30 +1,32 @@
 require 'rails_helper'
 require 'faker'
+require 'support/factory_bot'
 
 RSpec.describe Vote, type: :model do
   describe 'Create a vote' do
-    let(:testuser) { User.create(username: 'carloncho', name: 'Carlos', email: 'carlos@microverse.org', password: '123456789') }
-    let(:testuser2) { User.create(username: 'peterrr', name: 'Peter', email: 'peter@microverse.org', password: '123456') }
-    uploader = ImageUploader.new(:store)
-    file = File.new(Rails.root.join('test/files/img7.jpg'))
-    uploaded_file = uploader.upload(file)
-
-    let(:testarticle) {Article.create( title: Faker::Lorem.sentence, 
-                                      text: Faker::Lorem.paragraph, 
-                                      author_id: testuser2.id, 
-                                      image_data: uploaded_file.to_json )}
-    subject { Vote.create(user_id: testuser.id, article_id: testarticle.id) }
+    let(:testuser) { create(:uservote) }
+    let(:testarticle) { build :article }
+    let!(:vote) { build :vote}
 
     it 'change the count of votes by one' do
-      expect { subject }.to change { Vote.count }.by(1)
+      testarticle.author_id = testuser.id
+      testarticle.save
+      vote.user_id = testuser.id
+      vote.article_id = testarticle.id
+      expect{ vote.save }.to change { Vote.count }.by(1)
     end
 
     it 'return user id' do
-      expect(subject.user_id).to eq(testuser.id)
+      testarticle.author_id = testuser.id
+      testarticle.save
+      vote.user_id = testuser.id
+      vote.article_id = testarticle.id
+      vote.save
+      expect(vote.user_id).to eq(testuser.id)
     end
 
-    it 'will not return testuser2 id' do
-      expect(subject.user_id).to_not eq(testuser2.id)
+    it 'will not return testuser id' do
+      expect(vote.user_id).to_not eq(testuser.id)
     end
   end
 
