@@ -102,15 +102,44 @@ cat_1 = Category.create(name: 'Entertainment', priority: 1)
 arr_cat = [ cat_1.id, cat_2.id, cat_3.id, cat_4.id ]
 
 arti = []
+
+img1 = 'https://cdn.pixabay.com/photo/2017/09/03/17/26/woman-2711279_960_720.jpg'
+img2 = 'https://cdn.pixabay.com/photo/2015/08/15/10/11/dog-889376_960_720.jpg'
+img3 = 'https://cdn.pixabay.com/photo/2014/12/10/05/50/english-bulldog-562723_960_720.jpg'
+img4 = 'https://cdn.pixabay.com/photo/2015/02/21/10/39/dog-644111_960_720.jpg'
+img5 = 'https://cdn.pixabay.com/photo/2019/07/30/05/53/dog-4372036_960_720.jpg'
+img6 = 'https://cdn.pixabay.com/photo/2020/11/12/13/44/labrador-retriever-5735582_960_720.jpg'
+img7 = 'https://cdn.pixabay.com/photo/2016/02/18/18/37/puppy-1207816_960_720.jpg'
+
+img_arr = [ img1, img2, img3, img4, img5, img6, img7]
+
+
 20.times {
 
   # file = File.new(Rails.root.join('app/assets/images/seed/' + img_dogs.sample + '.jpg'))
 
 
   art = Article.create( title: Faker::Lorem.sentence, 
-                        text: Faker::Lorem.paragraphs(number: 4),
+                        text: 
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Phasellus vulputate sed elit condimentum sodales. Cras tellus dolor,
+                        mattis viverra felis ut, accumsan pulvinar nulla. Aliquam elit sapien,
+                        aliquam et lobortis vitae, elementum quis justo. Fusce non dui a justo commodo dapibus.
+                        Phasellus pretium sed mauris molestie lacinia. Curabitur dapibus varius ultricies.
+                        Sed vestibulum, nulla ut facilisis tristique, diam felis facilisis velit, quis tristiqu
+                        lacus urna id dolor. Donec varius porta lacus, eget finibus metus imperdiet at.
+                        In at neque facilisis magna porta bibendum at at tortor. Fusce lorem quam, condimentum mollis elementum quis,
+                        interdum ac orci. Mauris quis ipsum non dui lacinia dignissim. Orci varius natoque penatibus
+                        et magnis dis parturient montes, nascetur ridiculus mus.
+                        
+                        Donec rhoncus feugiat mi eget aliquet. Vestibulum laoreet convallis nisl,
+                        id volutpat justo facilisis sit amet. Phasellus finibus libero at lectus aliquam, vitae gravida ex pretium.
+                        Mauris nec risus et nibh luctus egestas quis eget est. Sed eget urna nec tortor bibendum finibus. Sed non tincidunt libero,
+                        ac finibus enim. Ut urna quam, ultricies sit amet est sit amet, sollicitudin pharetra eros. Ut rutrum mauris quis rutrum molestie. Sed urna
+                        lectus, dapibus sit amet lectus at, porttitor consequat libero. Suspendisse rhoncus tristique nibh, at aliquet sapien vulputate nec. 
+                        Nullam vulputate est nunc, nec venenatis purus porttitor at. Mauris in neque at diam suscipit aliquam. Nunc consectetur commodo faucibus,',
                         author_id: users.sample, 
-                        remote_image_url:"http://upload.wikimedia.org/wikipedia/commons/2/28/Joan_Baez_Bob_Dylan_crop.jpg")
+                        remote_image_url: img_arr.sample )
 
   arti << art.id
   4.times {
