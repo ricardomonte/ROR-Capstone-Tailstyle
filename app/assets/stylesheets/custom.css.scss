@@ -68,6 +68,15 @@ html {
   width: calc(99vw / 4);
 }
 
+.card-show {
+  @extend .card;
+
+  max-width: 28.375rem;
+  min-width: 25rem;
+  flex-direction: row;
+  height: 37rem;
+}
+
 .container-image {
   width: calc(99vw / 4);
   height: 18.75rem;
@@ -109,7 +118,7 @@ html {
 .category-article__container {
   @extend .d-flex, .justify-content-end,
           .align-items-end;
-  height: 88%; 
+  height: 100%; 
 }
 
 .category-article__title {
@@ -127,7 +136,7 @@ html {
   @extend .card-body;
   
   padding: 0 0 20px 0;
-  width: 21.125rem;
+  width: 100%;
 }
 
 .container-image__art {
@@ -149,7 +158,7 @@ html {
 }
 
 .module {
-  width: 250px;
+  width: 85%;
   margin: 0 0 1em 0;
   overflow: hidden;
 }

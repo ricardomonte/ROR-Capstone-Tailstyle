@@ -94,31 +94,31 @@ users = []
   users << user.id
 }
 
-cat_n = Category.create(name: 'Nutrition', priority: 3)
-cat_h = Category.create(name: 'Healthy life', priority: 4)
-cat_g = Category.create(name: 'Grooming', priority: 2)
-cat_e = Category.create(name: 'Entertainment', priority: 1)
+cat_3 = Category.create(name: 'Nutrition', priority: 3)
+cat_4 = Category.create(name: 'Healthy life', priority: 4)
+cat_2 = Category.create(name: 'Grooming', priority: 2)
+cat_1 = Category.create(name: 'Entertainment', priority: 1)
+
+arr_cat = [ cat_1.id, cat_2.id, cat_3.id, cat_4.id ]
+
+arti = []
+20.times {
+
+  # file = File.new(Rails.root.join('app/assets/images/seed/' + img_dogs.sample + '.jpg'))
 
 
+  art = Article.create( title: Faker::Lorem.sentence, 
+                        text: Faker::Lorem.paragraphs(number: 4),
+                        author_id: users.sample, 
+                        remote_image_url:"http://upload.wikimedia.org/wikipedia/commons/2/28/Joan_Baez_Bob_Dylan_crop.jpg")
 
-# arti = []
-# 9.times {
+  arti << art.id
+  4.times {
+    art.category_ids = arr_cat.sample
+  }
+}
 
-#   # file = File.new(Rails.root.join('app/assets/images/seed/' + img_dogs.sample + '.jpg'))
-
-
-#   art = Article.create( title: Faker::Lorem.sentence, 
-#                         text: Faker::Lorem.paragraph, 
-#                         author_id: users.sample, 
-#                         remote_image_url:"http://upload.wikimedia.org/wikipedia/commons/2/28/Joan_Baez_Bob_Dylan_crop.jpg")
-
-#   arti << art.id
-#   4.times {
-#     art.category_ids = arr_cat.sample
-#   }
-# }
-
-# vote = Vote.create(user_id: users.sample, article_id: arti.sample)
+vote = Vote.create(user_id: users.sample, article_id: arti.sample)
 
 
 p Category.count

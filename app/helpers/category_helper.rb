@@ -18,7 +18,7 @@ module CategoryHelper
     element.each do | article |  
       unless article.nil?
         concat content_tag(:div, content_tag(:div, image_article_show(article, category),
-                          class: 'container-article'), class: 'card') 
+                          class: 'container-article'), class: 'card-show') 
       end
     end
   end
@@ -26,7 +26,7 @@ module CategoryHelper
   def image_article_show(element, category)
     content_tag(:div, (image_tag element.image.url, class: 'image-article'),
               class: 'container-image__art') +
-    content_tag(:div, content_article_show(element, category) , class: "pl-2")
+    content_tag(:div, content_article_show(element, category) , class: "pl-2 h-100")
     
   end
 
