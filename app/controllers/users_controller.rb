@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(users_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome to TailStyle, you can start writting articles"
+      flash[:notice] = 'Welcome to TailStyle, you can start writting articles'
       redirect_to root_path
     else
       flash[:alert] = @user.errors.full_messages.join('. ')

@@ -6,14 +6,14 @@ RSpec.describe Vote, type: :model do
   describe 'Create a vote' do
     let(:testuser) { create(:uservote) }
     let(:testarticle) { build :article }
-    let!(:vote) { build :vote}
+    let!(:vote) { build :vote }
 
     it 'change the count of votes by one' do
       testarticle.author_id = testuser.id
       testarticle.save
       vote.user_id = testuser.id
       vote.article_id = testarticle.id
-      expect{ vote.save }.to change { Vote.count }.by(1)
+      expect { vote.save }.to change { Vote.count }.by(1)
     end
 
     it 'return user id' do
@@ -29,7 +29,6 @@ RSpec.describe Vote, type: :model do
       expect(vote.user_id).to_not eq(testuser.id)
     end
   end
-
 
   describe 'Vote associations' do
     it 'belongs to user' do

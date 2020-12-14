@@ -18,7 +18,6 @@ RSpec.describe Article, type: :model do
     end
   end
 
-
   describe 'Article associations' do
     it 'belongs to user' do
       article = Article.reflect_on_association(:user)

@@ -2,8 +2,8 @@ require 'faker'
 
 FactoryBot.define do
   factory :article do
-    title  { 'this is a test' } 
-    text  { Faker::Lorem.paragraph }
+    title { 'this is a test' }
+    text { Faker::Lorem.paragraph }
     author_id { 1 }
     image { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'img1.jpg'), 'image/jpg') }
   end

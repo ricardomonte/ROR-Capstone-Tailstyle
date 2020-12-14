@@ -3,7 +3,7 @@ require 'support/factory_bot'
 
 RSpec.describe User, type: :model do
   describe 'Create a user' do
-    let(:usertest) { create(:user)}
+    let(:usertest) { create(:user) }
 
     it 'change the count of users by one' do
       expect { usertest }.to change { User.count }.by(1)

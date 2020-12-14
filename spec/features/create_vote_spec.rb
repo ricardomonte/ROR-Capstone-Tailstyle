@@ -13,8 +13,8 @@ RSpec.describe 'Session create and delete', type: :feature do
     click_on 'Write an Article'
     fill_in 'article_title', with: 'This is a new article for testing.'
     fill_in 'article_text', with: 'This is a new text for the article for testing.'
-    attach_file("article_image", Rails.root + "spec/fixtures/img1.jpg")
-    page.choose("#{category.name}")
+    attach_file('article_image', Rails.root + 'spec/fixtures/img1.jpg')
+    page.choose(category.name.to_s)
     click_button 'Create Article'
     visit category_path(category.id)
   end
