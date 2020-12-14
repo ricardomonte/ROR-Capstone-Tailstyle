@@ -5,7 +5,7 @@ require 'support/factory_bot'
 RSpec.describe Article, type: :model do
   describe 'Create an article' do
     let(:testuser) { create :user }
-    !let(:testarticle) { build :article }
+    let(:testarticle) { build :article }
 
     it 'change the count of article by one' do
       testarticle.author_id = testuser.id

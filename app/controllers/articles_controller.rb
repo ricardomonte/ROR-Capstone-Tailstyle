@@ -9,10 +9,11 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.build(title: params[:article][:title], text: params[:article][:text], image: params[:article][:image])
+    @article = current_user.articles.build(title: params[:article][:title], text: params[:article][:text],
+                                           image: params[:article][:image])
     category = params[:article][:categories].to_i
 
-    if category == 0
+    if category.zero?
       flash[:alert] = 'Article has not been created, missing category'
       redirect_back(fallback_location: root_path)
     elsif @article.save
