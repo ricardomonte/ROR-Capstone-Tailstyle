@@ -1,13 +1,13 @@
 module CategoryHelper
   def display_category_index(element)
     element.each do |category|
-      unless category.articles.blank?
-        concat content_tag(:div,
-                           content_tag(:div,
-                                       (image_tag category.articles.first_article.image.url, class: 'card-images'),
-                                       class: 'container-image') +
-        content_tag(:div, link_title(category), class: 'card-overlay-index'), class: 'card-index')
-      end
+      next if category.articles.blank?
+
+      concat content_tag(:div,
+                         content_tag(:div,
+                                     (image_tag category.articles.first_article.image.url, class: 'card-images'),
+                                     class: 'container-image') +
+      content_tag(:div, link_title(category), class: 'card-overlay-index'), class: 'card-index')
     end
   end
 
