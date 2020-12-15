@@ -77,7 +77,7 @@ html {
   max-width: 28.375rem;
   min-width: 25rem;
   flex-direction: row;
-  height: 37rem;
+  height: 46rem;
 }
 
 .container-image {
@@ -135,7 +135,7 @@ html {
 }
 
 .image-article {
-  @extend .h-100, .w-100;
+  @extend .w-100;
 
   object-fit: cover;
 }
@@ -147,10 +147,17 @@ html {
   width: 100%;
 }
 
-.container-image__art {
-  @extend .card-img-top, .pb-2;
+.container-info__article {
+  @extend .pl-2, .h-50;
 
-  height: 225px;
+  margin-top: 1.3rem;
+  min-height: max-content;
+}
+
+.container-image__art {
+  @extend .card-img-top;
+
+  height: 50%;
   overflow: hidden;
 }
 

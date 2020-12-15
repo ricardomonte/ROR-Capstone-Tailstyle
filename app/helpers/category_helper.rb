@@ -17,6 +17,28 @@ module CategoryHelper
                   class: 'category-article__container')
   end
 
+  def display_category_show2(element, category)
+    count = 1
+    (0...element.length).each do |article|
+      unless element.nil?
+        if count.even?
+          concat content_tag(:div, content_tag(:div, image_article_show2(element[article], category),
+                                               class: 'container-article'), class: 'card-show')
+        else
+          concat content_tag(:div, content_tag(:div, image_article_show(element[article], category),
+                                               class: 'container-article'), class: 'card-show')
+        end
+        count += 1
+      end
+    end
+  end
+  
+  def image_article_show2(element, category) 
+    content_tag(:div, content_article_show(element, category), class: 'container-info__article') +
+    content_tag(:div, (image_tag element.image.url, class: 'image-article'),
+                class: 'container-image__art')
+  end
+
   def display_category_show(element, category)
     element.each do |article|
       unless article.nil?
@@ -29,7 +51,7 @@ module CategoryHelper
   def image_article_show(element, category)
     content_tag(:div, (image_tag element.image.url, class: 'image-article'),
                 class: 'container-image__art') +
-      content_tag(:div, content_article_show(element, category), class: 'pl-2 h-100')
+      content_tag(:div, content_article_show(element, category), class: 'container-info__article')
   end
 
   def content_article_show(element, category)
@@ -52,5 +74,50 @@ module CategoryHelper
         content_tag(:p, content_tag(:small, (link_to 'Read  more', article_path(element.id), class: 'link-readmore')),
                     class: 'author-article')
     end
+  end
+end
+
+
+def display_category_show2(element, category)
+  count = 1
+  (element.length).times do |article|
+    unless element.nil?
+      if count.even?
+        concat content_tag(:div, content_tag(:div, image_article_show2(article, category),
+                                             class: 'container-article'), class: 'card-show')
+      else
+        concat content_tag(:div, content_tag(:div, image_article_show(element, category),
+                                             class: 'container-article'), class: 'card-show')
+      end
+      count += 1
+    end
+  end
+end
+
+def image_article_show2(element, category) 
+  content_tag(:div, content_article_show(element, category), class: 'pl-2 h-100') +
+    content_tag(:div, (image_tag element.image.url, class: 'image-article'),
+              class: 'container-image__art')
+end
+
+def content_article_show(element, category)
+  if signed_in?
+    content_tag(:h6, category.name, class: 'category-name') +
+      content_tag(:h5, element.title, class: 'article-title') +
+      content_tag(:div, content_tag(:p, element.text, class: 'article-text'), class: 'module overflow') +
+      content_tag(:p, content_tag(:small, "Author: #{element.user.username}"), class: 'author-article') +
+      (link_to '<i class="fas fa-dog fa-3x" style="color: #FF6300;"></i>'.html_safe,
+               votes_path(votes: { article_id: element.id }), method: :post, id: 'vote') +
+      content_tag(:p, content_tag(:small, 'You can vote for this article clicking in the dog'),
+                  class: 'author-article') +
+      content_tag(:p, content_tag(:small, (link_to 'Read  more', article_path(element.id), class: 'link-readmore')),
+                  class: 'author-article')
+  else
+    content_tag(:h6, category.name, class: 'category-name') +
+      content_tag(:h5, element.title, class: 'article-title') +
+      content_tag(:div, content_tag(:p, element.text, class: 'article-text'), class: 'module overflow') +
+      content_tag(:p, content_tag(:small, "Author: #{element.user.username}"), class: 'author-article') +
+      content_tag(:p, content_tag(:small, (link_to 'Read  more', article_path(element.id), class: 'link-readmore')),
+                  class: 'author-article')
   end
 end

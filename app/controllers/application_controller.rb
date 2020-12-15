@@ -6,9 +6,7 @@ class ApplicationController < ActionController::Base
                       User.find_by(id: session[:user_id])
   end
 
-  # rubocop:disable Style/DoubleNegation
   def signed_in?
-    !!current_user
+    !current_user.nil?
   end
-  # rubocop:enable Style/DoubleNegation
 end
