@@ -20,23 +20,23 @@ module CategoryHelper
   def display_category_show2(element, category)
     count = 1
     (0...element.length).each do |article|
-      unless element.nil?
-        if count.even?
-          concat content_tag(:div, content_tag(:div, image_article_show2(element[article], category),
-                                               class: 'container-article'), class: 'card-show')
-        else
-          concat content_tag(:div, content_tag(:div, image_article_show(element[article], category),
-                                               class: 'container-article'), class: 'card-show')
-        end
-        count += 1
+      next if element.nil?
+
+      if count.even?
+        concat content_tag(:div, content_tag(:div, image_article_show2(element[article], category),
+                                             class: 'container-article'), class: 'card-show')
+      else
+        concat content_tag(:div, content_tag(:div, image_article_show(element[article], category),
+                                             class: 'container-article'), class: 'card-show')
       end
+      count += 1
     end
   end
-  
-  def image_article_show2(element, category) 
+
+  def image_article_show2(element, category)
     content_tag(:div, content_article_show(element, category), class: 'container-info__article') +
-    content_tag(:div, (image_tag element.image.url, class: 'image-article'),
-                class: 'container-image__art')
+      content_tag(:div, (image_tag element.image.url, class: 'image-article'),
+                  class: 'container-image__art')
   end
 
   def display_category_show(element, category)
@@ -77,27 +77,26 @@ module CategoryHelper
   end
 end
 
-
 def display_category_show2(element, category)
   count = 1
-  (element.length).times do |article|
-    unless element.nil?
-      if count.even?
-        concat content_tag(:div, content_tag(:div, image_article_show2(article, category),
-                                             class: 'container-article'), class: 'card-show')
-      else
-        concat content_tag(:div, content_tag(:div, image_article_show(element, category),
-                                             class: 'container-article'), class: 'card-show')
-      end
-      count += 1
+  element.length.times do |article|
+    next if element.nil?
+
+    if count.even?
+      concat content_tag(:div, content_tag(:div, image_article_show2(article, category),
+                                           class: 'container-article'), class: 'card-show')
+    else
+      concat content_tag(:div, content_tag(:div, image_article_show(element, category),
+                                           class: 'container-article'), class: 'card-show')
     end
+    count += 1
   end
 end
 
-def image_article_show2(element, category) 
+def image_article_show2(element, category)
   content_tag(:div, content_article_show(element, category), class: 'pl-2 h-100') +
     content_tag(:div, (image_tag element.image.url, class: 'image-article'),
-              class: 'container-image__art')
+                class: 'container-image__art')
 end
 
 def content_article_show(element, category)
