@@ -1,0 +1,7 @@
+<li class="nav-item">
+  <p class="navbar-text m-0"><%= current_user.username %></p>   
+</li>
+<li class="nav-item">
+  <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %> 
+</li>
+

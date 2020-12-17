@@ -5,4 +5,18 @@ module ApplicationHelper
       concat content_tag(:li, (link_to cat.name, category_path(cat.id), class: 'nav-link'), class: 'nav-item')
     end
   end
+
+  def w_article
+    if signed_in?
+      render partial: 'layouts/write_article'
+    end
+  end
+
+  def login_logout
+    if signed_in?
+      render partial: 'layouts/login'
+    else
+      render partial: 'layouts/logout'
+    end
+  end
 end
