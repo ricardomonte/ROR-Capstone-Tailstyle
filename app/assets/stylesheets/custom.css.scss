@@ -24,6 +24,7 @@ html {
   @extend .card-group;
 
   justify-content: center;
+  width: 100vw;
 }
 
 .container-hero__info {
@@ -67,8 +68,14 @@ html {
   @include card-index-base;
 
   background-color: #4e443e;
-  height: 18.75rem;
-  width: calc(99vw / 4);
+  height: 18.9rem;
+  width: calc(100vw / 4);
+}
+
+.group-show {
+  @extend .card-group;
+
+  height: 85vh;
 }
 
 .card-show {
@@ -77,11 +84,12 @@ html {
   max-width: 28.375rem;
   min-width: 25rem;
   flex-direction: row;
-  height: 46rem;
+  height: 100%;
+  border: 0;
 }
 
 .container-image {
-  width: calc(99vw / 4);
+  width: calc(100vw / 4);
   height: 18.75rem;
   overflow: hidden;
 }
@@ -137,13 +145,14 @@ html {
 .image-article {
   @extend .w-100;
 
-  object-fit: cover;
+  object-fit: fill;
+  height: 100%;
 }
 
 .container-article {
   @extend .card-body;
 
-  padding: 0 0 20px 0;
+  padding: 0;
   width: 100%;
 }
 

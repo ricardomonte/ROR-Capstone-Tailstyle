@@ -10,11 +10,12 @@
   </head>
 
   <body>
-    <div style='min-height: content;'>
+    <div style='min-height: 100vh; position: relative;'>
       <%= render 'layouts/navigation' %>
       <%= render 'layouts/messages' %>
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
-    <%= render 'layouts/footer' %>
+    
   </body>
 </html>

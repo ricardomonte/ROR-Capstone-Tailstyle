@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @article_category = @category.articles.order_by_creat
+    @article_category = @category.articles.order_by_creat.limit(4)
   end
 
   private
