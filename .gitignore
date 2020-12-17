@@ -37,3 +37,6 @@ yarn-debug.log*
 package-lock.json
 public/uploads
 .env
+
+# Ignore application configuration
+/config/application.yml

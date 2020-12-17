@@ -1113,6 +1113,8 @@ GEM
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
     ffi (1.13.1)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     fog-aws (3.7.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -1293,6 +1295,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker!
+  figaro
   fog-aws
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
