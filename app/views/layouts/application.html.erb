@@ -10,12 +10,14 @@
   </head>
 
   <body>
-    <div style='min-height: 100vh; position: relative;'>
-      <%= render 'layouts/navigation' %>
+    <%= render 'layouts/navigation' %>
+    <div style='background-color: #4E443E; height: 100%'>
+
       <%= render 'layouts/messages' %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
+      <div style="height: 85vh;">
+        <%= yield %>
+      </div>
     </div>
-    
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -75,7 +75,8 @@ html {
 .group-show {
   @extend .card-group;
 
-  height: 85vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .card-show {
