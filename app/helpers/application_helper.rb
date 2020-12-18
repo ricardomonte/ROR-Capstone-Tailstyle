@@ -19,4 +19,10 @@ module ApplicationHelper
       render partial: 'layouts/logout'
     end
   end
+
+  def display_vote
+    if signed_in?
+      render partial: 'articles/vote'
+    end
+  end
 end

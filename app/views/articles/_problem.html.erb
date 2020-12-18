@@ -1,5 +1,5 @@
 <div class="container h-100">
-  <div class="row justify-content-center align-items-center" style="min-height: 45rem;">
+  <div class="row justify-content-center align-items-center arct-form__problem">
     <div class="card">
       <div class="card-body d-flex flex-column justify-content-center align-items-center">
         <h4 class="card-title">OOPS There was a problem</h4>
@@ -7,9 +7,9 @@
         <h6 class="card-subtitle mb-2">Its seems that you didnt Login</h6>
         <p>
         You can
-        <%= link_to "Login", login_path, style: 'text-decoration: none; color: #FF6300;' %>
+        <%= link_to "Login", login_path, class: 'arct-form__link' %>
         or
-        <%= link_to "Register", new_user_path, style: 'text-decoration: none; color: #FF6300;' %>
+        <%= link_to "Register", new_user_path, class: 'arct-form__link' %>
         </p>
       </div>
     </div>
