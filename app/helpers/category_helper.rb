@@ -48,31 +48,26 @@ module CategoryHelper
   def content_article_show(element, category)
     if signed_in?
       content_tag(:h6, category.name, class: 'category-name') +
-      content_tag(:h5, element.title, class: 'article-title') +
-      content_tag(:div, content_tag(:p, element.text, class: 'article-text'), class: 'module overflow') +
-      content_tag(:p, content_tag(:small, "Author: #{element.user.username}"), class: 'author-article') +
-      (link_to '<i class="fas fa-dog fa-3x icon-color"></i>'.html_safe,
-                votes_path(votes: { article_id: element.id }), method: :post, id: 'vote') +
-      content_tag(:p, content_tag(:small, 'You can vote for this article clicking in the dog'),
-                  class: 'author-article') +
-                  content_tag(:p, content_tag(:small, (link_to 'Read  more', article_path(element.id), class: 'link-readmore')),
-                  class: 'author-article')
+        content_tag(:h5, element.title, class: 'article-title') +
+        content_tag(:div, content_tag(:p, element.text, class: 'article-text'), class: 'module overflow') +
+        content_tag(:p, content_tag(:small, "Author: #{element.user.username}"), class: 'author-article') +
+        (link_to '<i class="fas fa-dog fa-3x icon-color"></i>'.html_safe,
+                 votes_path(votes: { article_id: element.id }), method: :post, id: 'vote') +
+        content_tag(:p, content_tag(:small, 'You can vote for this article clicking in the dog'),
+                    class: 'author-article') +
+        content_tag(:p, content_tag(:small, (link_to 'Read  more', article_path(element.id), class: 'link-readmore')),
+                    class: 'author-article')
     else
       content_tag(:h6, category.name, class: 'category-name') +
-      content_tag(:h5, element.title, class: 'article-title') +
-      content_tag(:div, content_tag(:p, element.text, class: 'article-text'), class: 'module overflow') +
-      content_tag(:p, content_tag(:small, "Author: #{element.user.username}"), class: 'author-article') +
-      content_tag(:p, content_tag(:small, (link_to 'Read  more', article_path(element.id), class: 'link-readmore')),
-      class: 'author-article')
+        content_tag(:h5, element.title, class: 'article-title') +
+        content_tag(:div, content_tag(:p, element.text, class: 'article-text'), class: 'module overflow') +
+        content_tag(:p, content_tag(:small, "Author: #{element.user.username}"), class: 'author-article') +
+        content_tag(:p, content_tag(:small, (link_to 'Read  more', article_path(element.id), class: 'link-readmore')),
+                    class: 'author-article')
     end
   end
-                      
+
   def index_display_all(article)
-    unless article.nil?
-      render partial: 'index_display', object: article
-    end
+    render partial: 'index_display', object: article unless article.nil?
   end
 end
-
-                      
-                    

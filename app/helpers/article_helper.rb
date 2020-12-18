@@ -7,7 +7,7 @@ module ArticleHelper
 
   def display_form_new
     if signed_in?
-      render partial: 'newform' 
+      render partial: 'newform'
     else
       render partial: 'problem'
     end

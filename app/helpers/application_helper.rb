@@ -7,9 +7,7 @@ module ApplicationHelper
   end
 
   def w_article
-    if signed_in?
-      render partial: 'layouts/write_article'
-    end
+    render partial: 'layouts/write_article' if signed_in?
   end
 
   def login_logout
@@ -21,8 +19,6 @@ module ApplicationHelper
   end
 
   def display_vote
-    if signed_in?
-      render partial: 'articles/vote'
-    end
+    render partial: 'articles/vote' if signed_in?
   end
 end
