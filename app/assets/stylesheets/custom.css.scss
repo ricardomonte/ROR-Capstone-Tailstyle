@@ -52,7 +52,7 @@ body {
 
 .container-app {
   flex: 1 0 auto;
-  background-color: #4E443E;
+  background-color: #4e443e;
 }
 
 .hero {
@@ -134,7 +134,7 @@ body {
 
 .container-show {
   @extend .d-flex, .flex-row,
-          .justify-content-center;
+    .justify-content-center;
 
   height: 100%;
   min-height: max-content;
@@ -311,7 +311,7 @@ body {
 
 .arct-form__link {
   text-decoration: none;
-  color: #FF6300;
+  color: #ff6300;
 }
 
 .article-show {
@@ -334,7 +334,7 @@ body {
 }
 
 .icon-color {
-  color: #FF6300;
+  color: #ff6300;
 }
 
 .footer {
@@ -349,11 +349,11 @@ body {
 }
 
 .footer-nav {
-  color: #FF6300 !important;
+  color: #ff6300 !important;
 }
 
 .footer-link__color {
   @extend .nav-link;
 
-  color: #FF6300 !important;
+  color: #ff6300 !important;
 }
