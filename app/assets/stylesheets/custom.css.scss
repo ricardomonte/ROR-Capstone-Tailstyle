@@ -28,6 +28,13 @@ body {
   overflow-x: hidden;
 }
 
+.nav-header {
+  @extend .navbar, .navbar-expand-lg, .navbar-light;
+
+  padding-bottom: 0.2rem;
+  padding-top: 0.4rem;
+}
+
 .logo {
   @extend .navbar-brand;
 
@@ -143,8 +150,7 @@ body {
 .card-show {
   @extend .card;
 
-  max-width: 29.375rem;
-  min-width: 25rem;
+  width: calc(100vw / 4);
   flex-direction: row;
   height: 100%;
   border: 0;
@@ -334,6 +340,12 @@ body {
 .footer {
   background-color: #4e443e;
   height: 4rem;
+}
+
+.container-footer {
+  @extend .container-fluid;
+
+  margin-top: 0.8rem;
 }
 
 .footer-nav {
