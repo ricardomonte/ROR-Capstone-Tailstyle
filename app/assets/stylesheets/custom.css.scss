@@ -25,6 +25,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .logo {
@@ -55,7 +56,7 @@ body {
 
 .container-hero__image {
   width: 100vw;
-  height: calc(100vh - 400px);
+  height: calc(100vh - 27rem);
   overflow: hidden;
 }
 
