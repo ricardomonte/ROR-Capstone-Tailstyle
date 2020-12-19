@@ -2,7 +2,7 @@ class Article < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :title, presence: true
-  validates :text, presence: true
+  validates :text, presence: true, length: { minimum: 1600 }
   validates :image, presence: true
 
   belongs_to :user, foreign_key: :author_id, class_name: 'User'
