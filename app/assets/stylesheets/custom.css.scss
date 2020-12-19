@@ -19,6 +19,7 @@
 html {
   height: 100%;
   background-color: #4e443e;
+  overflow: hidden;
 }
 
 body {
@@ -257,7 +258,7 @@ body {
 
 .overflow {
   --lh: 1.4rem;
-  --max-lines: 6;
+  --max-lines: 3;
 
   position: relative;
   max-height: calc(var(--lh) * var(--max-lines));
@@ -344,8 +345,6 @@ body {
 
 .container-footer {
   @extend .container-fluid;
-
-  margin-top: 0.8rem;
 }
 
 .footer-nav {
