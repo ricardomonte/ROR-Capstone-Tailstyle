@@ -228,8 +228,10 @@ body {
 .container-info__article {
   @extend .pl-2, .h-50;
 
-  margin-top: 1.3rem;
+  padding-top: 1.3rem;
   min-height: max-content;
+  display: flex;
+  flex-direction: column;
 }
 
 .container-image__art {
