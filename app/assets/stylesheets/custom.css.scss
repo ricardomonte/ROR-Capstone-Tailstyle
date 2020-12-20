@@ -63,9 +63,47 @@ body {
 }
 
 .container-hero__image {
-  width: 100vw;
+  width: 80vw;
   height: calc(100vh - 27rem);
   overflow: hidden;
+}
+
+.count-votes {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 20vw;
+  height: calc(100vh - 27rem);
+  text-align: center;
+  font-size: 100px;
+  background-color: white;
+  background-image: url(https://cdn.pixabay.com/photo/2016/04/01/09/02/animal-1299122_960_720.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  color: #fa6000;
+
+  &::before {
+    content: "The favorite article has:";
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 25px;
+    width: 100%;
+  }
+
+  &::after {
+    content: 'Votes';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 25px;
+    width: 100%;
+  }
 }
 
 .image-hero {

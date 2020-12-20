@@ -1,6 +1,13 @@
 <div class="hero">
-  <div class='container-hero__image'>
-    <%= image_tag @article.image.url, class: "image-hero", alt: "Responsive image"%>
+  <div class="d-flex">
+    <div class='container-hero__image'>
+      <%= image_tag @article.image.url, class: "image-hero", alt: "Responsive image"%>
+    </div>
+    
+    <div class="count-votes" id ='votecount' data-target=<%= @article.votes.count %>>
+      0
+      <%= javascript_pack_tag 'mijs' %>
+    </div>
   </div>
   <div class="card-img-overlay">
     <div class="container-hero__info d-flex flex-column justify-content-end align-items-start">
