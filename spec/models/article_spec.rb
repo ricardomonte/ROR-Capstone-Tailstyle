@@ -6,6 +6,7 @@ RSpec.describe Article, type: :model do
   describe 'Create an article' do
     let(:testuser) { create :user }
     let(:testarticle) { build :article }
+    let!(:testuser2) { create :user2 }
 
     it 'change the count of article by one' do
       testarticle.author_id = testuser.id
@@ -13,6 +14,7 @@ RSpec.describe Article, type: :model do
     end
 
     it 'will not return the author id' do
+      testarticle.author_id = testuser2.id
       testarticle.save
       expect(testarticle.author_id).to_not eq(testuser.id)
     end

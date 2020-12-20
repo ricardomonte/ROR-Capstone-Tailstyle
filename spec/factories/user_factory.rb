@@ -17,3 +17,12 @@ FactoryBot.define do
     password { Faker::Internet.password }
   end
 end
+
+FactoryBot.define do
+  factory :user2, class: 'User' do
+    username { Faker::Internet.username }
+    name { Faker::Name.first_name }
+    email { Faker::Internet.email }
+    password { Faker::Internet.password }
+  end
+end
