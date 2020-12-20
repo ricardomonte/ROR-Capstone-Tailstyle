@@ -76,11 +76,11 @@ body {
   height: calc(100vh - 27rem);
   text-align: center;
   font-size: 100px;
-  background-color: white;
-  background-image: url(https://cdn.pixabay.com/photo/2016/04/01/09/02/animal-1299122_960_720.png);
+  background: url(https://cdn.pixabay.com/photo/2016/04/01/09/02/animal-1299122_960_720.png) #4e443e;
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
+  background-blend-mode: soft-light;
   color: #fa6000;
 
   &::before {
