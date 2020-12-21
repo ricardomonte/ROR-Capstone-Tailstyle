@@ -63,7 +63,7 @@ body {
 }
 
 .container-hero__image {
-  width: 80vw;
+  width: 100vw;
   height: calc(100vh - 27rem);
   overflow: hidden;
 }
@@ -72,27 +72,17 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  position: absolute;
+  right: 0;
+  bottom: 45px;
   width: 20vw;
-  height: calc(100vh - 27rem);
   text-align: center;
-  font-size: 100px;
-  background: url(https://cdn.pixabay.com/photo/2016/04/01/09/02/animal-1299122_960_720.png) #4e443e;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
-  background-blend-mode: soft-light;
+  font-size: 50px;
   color: #fa6000;
-
-  &::before {
-    content: "The favorite article has:";
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    font-size: 25px;
-    width: 100%;
-  }
+  font-weight: bolder;
+  -webkit-text-fill-color: #fa6000; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
 
   &::after {
     content: 'Votes';
@@ -100,9 +90,11 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 40px;
     font-size: 25px;
+    font-weight: bolder;
     width: 100%;
+    color: #4e443e;
   }
 }
 
@@ -129,6 +121,10 @@ body {
   @extend .card-text;
 
   color: #fa6000;
+  font-weight: bolder;
+  -webkit-text-fill-color: #fa6000; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
 }
 
 .module-hero {
